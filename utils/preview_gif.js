@@ -11,11 +11,11 @@ const { format, preview_gif, } = require(path.join(basePath, "/src/config.js"));
 const canvas = createCanvas(format.width, format.height);
 const ctx = canvas.getContext("2d");
 
-const HashlipsGiffer = require(path.join(
+const NeobitGiffer = require(path.join(
   basePath,
-  "/modules/HashlipsGiffer.js"
+  "/modules/NeobitGiffer.js"
 ));
-let hashlipsGiffer = null;
+let neobitGiffer = null;
 
 const loadImg = async (_img) => {
   return new Promise(async (resolve) => {
@@ -53,7 +53,7 @@ const saveProjectPreviewGIF = async (_data) => {
 
     ctx.clearRect(0, 0, width, height);
 
-    hashlipsGiffer = new HashlipsGiffer(
+    neobitGiffer = new NeobitGiffer(
       canvas,
       ctx,
       `${previewPath}`,
@@ -61,7 +61,7 @@ const saveProjectPreviewGIF = async (_data) => {
       quality,
       delay
     );
-    hashlipsGiffer.start();
+    neobitGiffer.start();
 
     await Promise.all(_data).then((renderObjectArray) => {
       // Determin the order of the Images before creating the gif
@@ -84,10 +84,10 @@ const saveProjectPreviewGIF = async (_data) => {
         ctx.globalAlpha = 1;
         ctx.globalCompositeOperation = 'source-over';
         ctx.drawImage(renderObject.loadedImage, 0, 0, previewCanvasWidth, previewCanvasHeight);
-        hashlipsGiffer.add();
+        neobitGiffer.add();
       });
     });  
-    hashlipsGiffer.stop();
+    neobitGiffer.stop();
   }
 };
 

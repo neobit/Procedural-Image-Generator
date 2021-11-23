@@ -1,7 +1,7 @@
 {
-  "name": "hashlips_art_engine",
+  "name": "procedural-image-generator",
   "version": "1.0.9",
-  "description": "HashLips Art Engine is a tool used to create multiple different instances of artworks based on provided layers.",
+  "description": "Procedural Image Generato is a tool used to create multiple different instances of artworks based on provided layers.",
   "main": "index.js",
   "bin": "index.js",
   "pkg": {
@@ -20,7 +20,7 @@
     "update_info": "node utils/update_info.js",
     "preview_gif": "node utils/preview_gif.js"
   },
-  "author": "Daniel Eugene Botha (HashLips)",
+  "author": "Renewed by Neobit, provided by Hashlips",
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.8.0",

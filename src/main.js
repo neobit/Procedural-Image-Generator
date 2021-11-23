@@ -35,12 +35,12 @@ var metadataList = [];
 var attributesList = [];
 var dnaList = new Set();
 const DNA_DELIMITER = "-";
-const HashlipsGiffer = require(path.join(
+const NeobitGiffer = require(path.join(
   basePath,
-  "/modules/HashlipsGiffer.js"
+  "/modules/NeobitGiffer.js"
 ));
 
-let hashlipsGiffer = null;
+let neobitGiffer = null;
 
 const buildSetup = () => {
   if (fs.existsSync(buildDir)) {
@@ -145,7 +145,7 @@ const addMetadata = (_dna, _edition) => {
     date: dateTime,
     ...extraMetadata,
     attributes: attributesList,
-    compiler: "HashLips Art Engine",
+    compiler: "Procedural Image Generator",
   };
   if (network == NETWORK.sol) {
     tempMetadata = {
@@ -372,7 +372,7 @@ const startCreating = async () => {
           debugLogs ? console.log("Clearing canvas") : null;
           ctx.clearRect(0, 0, format.width, format.height);
           if (gif.export) {
-            hashlipsGiffer = new HashlipsGiffer(
+            neobitGiffer = new NeobitGiffer(
               canvas,
               ctx,
               `${buildDir}/gifs/${abstractedIndexes[0]}.gif`,
@@ -380,7 +380,7 @@ const startCreating = async () => {
               gif.quality,
               gif.delay
             );
-            hashlipsGiffer.start();
+            neobitGiffer.start();
           }
           if (background.generate) {
             drawBackground();
@@ -392,11 +392,11 @@ const startCreating = async () => {
               layerConfigurations[layerConfigIndex].layersOrder.length
             );
             if (gif.export) {
-              hashlipsGiffer.add();
+              neobitGiffer.add();
             }
           });
           if (gif.export) {
-            hashlipsGiffer.stop();
+            neobitGiffer.stop();
           }
           debugLogs
             ? console.log("Editions left to create: ", abstractedIndexes)

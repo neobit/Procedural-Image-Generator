@@ -1,7 +1,7 @@
 const GifEncoder = require("gif-encoder-2");
 const { writeFile } = require("fs");
 
-class HashLipsGiffer {
+class NeobitGiffer {
   constructor(_canvas, _ctx, _fileName, _repeat, _quality, _delay) {
     this.canvas = _canvas;
     this.ctx = _ctx;
@@ -35,4 +35,4 @@ class HashLipsGiffer {
   };
 }
 
-module.exports = HashLipsGiffer;
+module.exports = NeobitGiffer;
