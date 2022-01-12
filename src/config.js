@@ -9,9 +9,9 @@ const { NETWORK } = require(path.join(basePath, "constants/network.js"));
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "BlockzHeadz";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const namePrefix = "Waifu Workers";
+const description = "Unique collectible arts with pixelated anime style. Can be used as profile picture on all social networks!";
+const baseUri = "ipfs://QmYawKF3uWLKwKyxvXwJUugVa5E9E5hZXcrToPy8GJdyb7";
 
 const solanaMetadata = {
   symbol: "YC",
@@ -19,7 +19,7 @@ const solanaMetadata = {
   external_url: "https://www.youtube.com/c/",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "0xE81B683b30D4dd08a4B7Bd72BD1FE2fE97E8501b",
       share: 100,
     },
   ],
@@ -30,12 +30,10 @@ const layerConfigurations = [
   {
     growEditionSizeTo: 100,
     layersOrder: [
-      { name: "BackgroundSkin" },
-      { name: "Pants" },
-      { name: "Shirts" },
-      { name: "Mouth" },
-      { name: "Hats" },
-      { name: "Eyes" },
+      { name: "Body" },
+      { name: "Cloths" },
+      { name: "Hairs" },
+      { name: "Faces" },
     ],
   },
 ];
@@ -45,8 +43,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 480,
-  height: 480,
+  width: 540 ,
+  height: 540,
 };
 
 const gif = {
@@ -76,8 +74,8 @@ const pixelFormat = {
 const background = {
   generate: true,
   brightness: "80%",
-  static: false,
-  default: "#000000",
+  static: true,
+  default: "#d77bba",
 };
 
 const extraMetadata = {};
